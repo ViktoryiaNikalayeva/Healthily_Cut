@@ -1,0 +1,19 @@
+{
+  "firefox": {
+    "versions": {
+      "latest": {
+        "image": "127.0.0.1/firefox:latest",
+        "port": "4444"
+      }
+    }
+  },
+  "chrome": {
+    "versions": {
+      "latest": {
+        "image": "127.0.0.1/chrome:latest",
+        "port": "4444"
+      }
+    }
+  }
+}
+
