@@ -7,6 +7,9 @@ pool:
 steps:
   - task: Maven@3
     inputs:
+    env:
+      BROWSER1: chrome
+      BROWSER2: firefox
       mavenPomFile: 'pom.xml'
       mavenOptions: '-Xmx3072m'
       javaHomeOption: 'JDKVersion'
@@ -15,3 +18,4 @@ steps:
       publishJUnitResults: false
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'package'
+     
