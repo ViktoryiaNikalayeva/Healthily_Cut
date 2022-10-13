@@ -19,3 +19,16 @@ steps:
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'package'
      
+  - script: |
+      mvn clean test
+      mvn generate:allure
+  - task: AllureGenerate@1
+    inputs:
+      resultsDir: '$(System.DefaultWorkingDirectory)/allure-results
+      targetDir: '$(System.DefaultWorkingDirectory)/allurereport
+  - task: CopyPublishBuildArtifacts@1
+    inputs:
+      CopyRoot: '''$(System.DefaultWorkingDirectory)/**/report'
+      Contents: 'allure report'
+      ArtifactName: 'allure report'
+      ArtifactType: 'FilePath'
