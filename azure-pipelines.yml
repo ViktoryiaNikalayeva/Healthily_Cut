@@ -21,3 +21,4 @@ steps:
       targetDir: 'allurereport'
   - script: |
       mvn generate:allure    
+  
