@@ -24,8 +24,8 @@ steps:
       mvn generate:allure
   - task: AllureGenerate@1
     inputs:
-      resultsDir: '$(System.DefaultWorkingDirectory)/allure-results
-      targetDir: '$(System.DefaultWorkingDirectory)/allurereport
+      resultsDir: '$(System.DefaultWorkingDirectory)/allure-results'
+      targetDir: '$(System.DefaultWorkingDirectory)/allurereport'
   - task: CopyPublishBuildArtifacts@1
     inputs:
       CopyRoot: '''$(System.DefaultWorkingDirectory)/**/report'
