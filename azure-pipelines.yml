@@ -11,11 +11,8 @@ trigger:
 jobs:
 - job: build
   displayName: build
-  pool: 
-    browser: ${{ parameters.browser }}
-
-pool:
-  vmImage: default
+  pool: default
+  browser: ${{ parameters.browser }}
 
   steps:
   - task: Maven@3
