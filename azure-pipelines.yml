@@ -12,7 +12,7 @@ jobs:
 - job: build
   displayName: build
   pool: default
-  browser: ${{ parameters.browser }}
+    
 
   steps:
   - task: Maven@3
