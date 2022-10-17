@@ -15,10 +15,11 @@ steps:
      
   - script: |
       mvn clean test
-  - task: AllureGenerate@1
-    inputs:
-      resultsDir: 'allure-results'
-      targetDir: 'allurereport'
+
+- task: AllureGenerate@1
+  inputs:
+    resultsDir: 'allure-results'
+    targetDir: 'allure-report/$(Build.BuildNumber)'
   - script: |
       mvn generate:allure    
   
