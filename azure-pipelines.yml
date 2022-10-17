@@ -3,9 +3,7 @@ parameters:
   displayName: Browser Name
   type: string
   default: chrome
-  values:
-  - chrome
-  - firefox
+
 trigger:
   - none
 jobs:
