@@ -3,14 +3,18 @@ parameters:
   displayName: Browser Name
   type: string
   default: chrome
-
+  values:
+  - chrome
+  - firefox
 trigger:
   - none
 jobs:
 - job: build
   displayName: build
+  pool: 
+    browser: ${{ parameters.browser }}
+
   pool: default
-    
 
   steps:
   - task: Maven@3
