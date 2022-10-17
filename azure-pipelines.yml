@@ -15,7 +15,7 @@ jobs:
     browser: ${{ parameters.browser }}
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: default
 
   steps:
   - task: Maven@3
