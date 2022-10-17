@@ -12,25 +12,22 @@ jobs:
 - job: build
   displayName: build
   pool: 
-    browser: ${{ parameters.browser }}
-
-pool:
+  browser: ${{ parameters.browser }}
   vmImage: 'windows-latest'
+  steps:
+   - task: Maven@3
+     inputs:
+     mavenPomFile: 'pom.xml'
+     publishJUnitResults: true
+     testResultsFiles: '**/allure-reports/TEST-*.xml'
+     javaHomeOption: 'JDKVersion'
+     mavenVersionOption: 'Default'
+     mavenAuthenticateFeed: false
+     effectivePomSkip: false
+     sonarQubeRunAnalysis: false
 
-steps:
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    publishJUnitResults: true
-    testResultsFiles: '**/allure-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: false
-
-- task: AllureGenerate@1
-  inputs:
-    resultsDir: 'allure-results'
-    targetDir: 'allure-report/$(Build.BuildNumber)'
+   - task: AllureGenerate@1
+     inputs:
+      resultsDir: 'allure-results'
+      targetDir: 'allure-report/$(Build.BuildNumber)'
 
