@@ -10,24 +10,20 @@ steps:
       BROWSER1: chrome
       BROWSER2: firefox
       mavenPomFile: 'pom.xml'
-      mavenOptions: '-Xmx3072m'
-      javaHomeOption: 'JDKVersion'
-      jdkVersionOption: '1.11'
-      jdkArchitectureOption: 'x64'
-      publishJUnitResults: false
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'package'
      
   - script: |
       mvn clean test
-      mvn generate:allure
   - task: AllureGenerate@1
     inputs:
-      resultsDir: '$(System.DefaultWorkingDirectory)/allure-results'
-      targetDir: '$(System.DefaultWorkingDirectory)/allurereport'
+      resultsDir: 'allure-results'
+      targetDir: 'allurereport'
+  - script: |
+      mvn generate:allure    
   - task: CopyPublishBuildArtifacts@1
     inputs:
-      CopyRoot: '''$(System.DefaultWorkingDirectory)/**/report'
+      CopyRoot: '/report'
       Contents: 'allure report'
       ArtifactName: 'allure report'
       ArtifactType: 'FilePath'
