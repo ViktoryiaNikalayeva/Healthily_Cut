@@ -10,8 +10,8 @@ steps:
       BROWSER1: chrome
       BROWSER2: firefox
       mavenPomFile: 'pom.xml'
-      testResultsFiles: '**/surefire-reports/TEST-*.xml'
-      goals: 'package'
+      testResultsFiles: '**/allure-reports/TEST-*.xml'
+      goals: 'test -Dtest=CucumberRunner'
      
   - script: |
       mvn clean test
@@ -21,9 +21,3 @@ steps:
       targetDir: 'allurereport'
   - script: |
       mvn generate:allure    
-  - task: CopyPublishBuildArtifacts@1
-    inputs:
-      CopyRoot: '/report'
-      Contents: 'allure report'
-      ArtifactName: 'allure report'
-      ArtifactType: 'FilePath'
