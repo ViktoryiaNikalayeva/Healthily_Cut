@@ -1,7 +1,8 @@
 variables:
-  chrome: ${{ <browser> }}
-  firefox: ${{ <browser> }}
-
+- name: browser
+  value: chrome 
+- name: browser
+  value: firefox 
 trigger:
   - none
 
