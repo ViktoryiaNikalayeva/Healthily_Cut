@@ -12,6 +12,8 @@ jobs:
   pool: default
  
   steps:
+  - script: |
+      echo ${{ variables.browser }}
   - task: Maven@3
     inputs:
      mavenPomFile: 'pom.xml'
