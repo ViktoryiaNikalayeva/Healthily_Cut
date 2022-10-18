@@ -1,20 +1,21 @@
-variables:
+parameters:
 - name: browser
-  value: chrome 
-- name: browser
-  value: firefox 
+  displayName: Browser Name
+  type: string
+  default: chrome
+  values:
+  - chrome
+  - firefox
 trigger:
   - none
 
 jobs:
 - job: build
   displayName: build
-  pool: default
+  pool: 
+   browser: ${{ parameters.browser }}
  
   steps:
-  - bash: echo $(browser)
-  - powershell: echo $(browser)
-  - script: echo $(browser)
   - task: Maven@3
     inputs:
      mavenPomFile: 'pom.xml'
