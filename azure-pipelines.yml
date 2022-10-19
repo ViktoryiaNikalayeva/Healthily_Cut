@@ -1,5 +1,3 @@
-variables: 
-  browser: firefox
 trigger:
   - none
 
@@ -19,7 +17,7 @@ jobs:
      mavenAuthenticateFeed: false
      effectivePomSkip: false
      sonarQubeRunAnalysis: false
-     options: '-DBrowser=firefox'
+     #options: '-DbrowserName=firefox'
      goals: 'clean test'
   
   - task: AllureGenerate@1
