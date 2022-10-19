@@ -22,7 +22,7 @@ jobs:
      mavenAuthenticateFeed: false
      effectivePomSkip: false
      sonarQubeRunAnalysis: false
-     options: '-DbrowserName=${{values}}'
+     options: '-DbrowserName=${{parameters.browser}}'
      goals: 'clean test'
   
   - task: AllureGenerate@1
