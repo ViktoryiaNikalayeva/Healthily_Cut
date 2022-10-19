@@ -10,7 +10,7 @@ jobs:
 - job: build
   displayName: build
   pool: default
- 
+
   steps:
   - task: Maven@3
     inputs:
@@ -26,4 +26,3 @@ jobs:
     inputs:
      resultsDir: 'allure-results'
      targetDir: 'allure-report/$(Build.BuildNumber)'
-
