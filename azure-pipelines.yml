@@ -1,3 +1,8 @@
+parameters:
+ - name: browser
+   type: string
+   default: chrome
+   values: [chrome, firefox]
 trigger:
   - none
 
@@ -17,7 +22,7 @@ jobs:
      mavenAuthenticateFeed: false
      effectivePomSkip: false
      sonarQubeRunAnalysis: false
-     options: '-DbrowserName=firefox'
+     options: '-DbrowserName=${{parameters.value}}'
      goals: 'clean test'
   
   - task: AllureGenerate@1
