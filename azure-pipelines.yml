@@ -20,7 +20,7 @@ jobs:
      effectivePomSkip: false
      sonarQubeRunAnalysis: false
      options: '-DBrowser=firefox'
-     goals: mvn test 
+     goals: maven test 
   - task: AllureGenerate@1
     continueOnError: true
     inputs:
