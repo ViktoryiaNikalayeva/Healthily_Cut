@@ -34,7 +34,7 @@ jobs:
     inputs:
      targetPath: 'allure-report/$(Build.BuildNumber)'
      artifact: 'allureReport'
-     publishLocation: 'pipeline'
+     publishLocation: 'filePath'
   - task: PublishTestResults@2
     inputs:
       testResultsFormat: 'JUnit'
