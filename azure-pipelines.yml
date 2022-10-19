@@ -19,7 +19,7 @@ jobs:
      mavenAuthenticateFeed: false
      effectivePomSkip: false
      sonarQubeRunAnalysis: false
-     options: 'maven test -DBrowser=firefox'
+     options: 'mvn test -DBrowser=firefox'
   - task: AllureGenerate@1
     continueOnError: true
     inputs:
