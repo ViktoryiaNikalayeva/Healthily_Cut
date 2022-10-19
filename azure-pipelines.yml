@@ -3,7 +3,6 @@ variables:
    firefoxBrowser: firefox
    chromeBrowser: chrome
    default: firefoxBrowser
-   browser: ${{variables.browser}}
 trigger:
   - none
 
@@ -12,7 +11,7 @@ jobs:
   displayName: build
   pool: default
 
-  steps:
+  steps: 
   - task: Maven@3
     inputs:
      mavenPomFile: 'pom.xml'
@@ -23,6 +22,7 @@ jobs:
      mavenAuthenticateFeed: false
      effectivePomSkip: false
      sonarQubeRunAnalysis: false
+     browser: ${{variables.browser}}  
   - task: AllureGenerate@1
     inputs:
      resultsDir: 'allure-results'
