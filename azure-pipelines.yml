@@ -1,8 +1,5 @@
 variables: 
-   name: browser
-   firefoxBrowser: firefox
-   chromeBrowser: chrome
-   default: firefoxBrowser
+  browser: chrome
 trigger:
   - none
 
@@ -28,4 +25,3 @@ jobs:
     inputs:
      resultsDir: 'allure-results'
      targetDir: 'allure-report/$(Build.BuildNumber)'
-    
