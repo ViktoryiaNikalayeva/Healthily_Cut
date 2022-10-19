@@ -9,8 +9,7 @@ trigger:
 jobs:
 - job: build
   displayName: build
-  pool: 
-   browser: ${{ variables.browser }}
+  pool: default
  
   steps:
   - task: Maven@3
@@ -23,7 +22,6 @@ jobs:
      mavenAuthenticateFeed: false
      effectivePomSkip: false
      sonarQubeRunAnalysis: false
-
   - task: AllureGenerate@1
     inputs:
      resultsDir: 'allure-results'
