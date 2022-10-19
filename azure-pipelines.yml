@@ -1,5 +1,5 @@
 variables: 
-  browser: chrome
+  browser: firefox
 trigger:
   - none
 
