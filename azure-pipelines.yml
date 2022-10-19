@@ -24,6 +24,8 @@ jobs:
      sonarQubeRunAnalysis: false
      browser: ${{variables.browser}}  
   - task: AllureGenerate@1
+    continueOnError: true
     inputs:
      resultsDir: 'allure-results'
      targetDir: 'allure-report/$(Build.BuildNumber)'
+    
