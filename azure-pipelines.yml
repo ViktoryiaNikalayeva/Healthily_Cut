@@ -1,8 +1,8 @@
-variables:
+variables: 
    name: browser
    firefoxBrowser: firefox
    chromeBrowser: chrome
-
+   browser: ${{variables.browser}}
 trigger:
   - none
 
