@@ -30,3 +30,12 @@ jobs:
     inputs:
      resultsDir: 'allure-results'
      targetDir: 'allure-report/$(Build.BuildNumber)'
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: 'v2.nikolaeva/agents/_work/1/s/allure-report'
+      artifact: 'allureReport'
+      publishLocation: 'pipeline'
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/allure-reports/TEST-*.xml'
