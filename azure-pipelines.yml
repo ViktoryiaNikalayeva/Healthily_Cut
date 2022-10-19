@@ -3,6 +3,7 @@ variables:
    firefoxBrowser: firefox
    chromeBrowser: chrome
    browser: ${{variables.browser}}
+   default: firefoxBrowser
 trigger:
   - none
 
