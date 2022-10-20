@@ -38,4 +38,4 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testRunner: 'JUnit'
-      testResultsFiles: '**/allure-report/TEST-*.xml'
+      testResultsFiles: '**/TEST-*.xml'
