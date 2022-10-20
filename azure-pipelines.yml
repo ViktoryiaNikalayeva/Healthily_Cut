@@ -32,7 +32,7 @@ jobs:
      targetDir: 'allure-report/$(Build.BuildNumber)'
   - task: PublishPipelineArtifact@1
     inputs:
-     targetPath: 'C:**\agents\_work\1\s\allure-report\$(Build.BuildNumber)'
+     targetPath: 'C:*\agents\_work\1\s\allure-report\$(Build.BuildNumber)'
      artifactName: 'allureReport'
      publishLocation: 'pipeline'
   - task: PublishTestResults@2
