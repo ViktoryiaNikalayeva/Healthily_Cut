@@ -16,7 +16,7 @@ jobs:
     inputs:
      mavenPomFile: 'pom.xml'
      publishJUnitResults: true
-     testResultsFiles: '**/allure-reports/TEST-*.xml'
+     testResultsFiles: 'C:/Users/v2.nikolaeva/agents/_work/1/s/allure-results'
      javaHomeOption: 'JDKVersion'
      mavenVersionOption: 'Default'
      mavenAuthenticateFeed: false
@@ -38,4 +38,4 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testRunner: 'JUnit'
-      testResultsFiles: '**/allure-reports/TEST-*.xml'
+      testResultsFiles: 'C:/Users/v2.nikolaeva/agents/_work/1/s/allure-results'
