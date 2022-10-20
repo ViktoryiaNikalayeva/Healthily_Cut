@@ -37,5 +37,5 @@ jobs:
      publishLocation: 'pipeline'
   - task: PublishTestResults@2
     inputs:
-      testResultsFormat: 'JUnit'
-      testResultsFiles: 'C:/Users/v2.nikolaeva/agents/_work/1/s/allure-report/$(Build.BuildNumber)'
+      testRunner: 'JUnit'
+      testResultsFiles: '**/allure-reports/TEST-*.xml'
