@@ -32,9 +32,9 @@ jobs:
      targetDir: 'allure-report/$(Build.BuildNumber)'
   - task: PublishPipelineArtifact@1
     inputs:
-     targetPath: 'allure-report/$(Build.BuildNumber)'
-     artifact: 'allureReport'
-     publishLocation: 'filePath'
+     targetPath: '**/allure-report/$(Build.BuildNumber)'
+     artifactName: 'allureReport'
+     publishLocation: 'pipeline'
   - task: PublishTestResults@2
     inputs:
       testResultsFormat: 'JUnit'
